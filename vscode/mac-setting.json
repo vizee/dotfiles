@@ -1,0 +1,72 @@
+{
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.glyphMargin": false,
+    "editor.minimap.enabled": false,
+    "editor.folding": false,
+    "editor.wordBasedSuggestions": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.activityBar.visible": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    "rust-analyzer.checkOnSave.enable": false,
+    "rust-analyzer.checkOnSave.allTargets": false,
+    "rust-analyzer.diagnostics.enable": false,
+    "rust-analyzer.inlayHints.enable": false,
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        "editor.snippetSuggestions": "none"
+    },
+    "go.goroot": "/Users/vizee/local/go",
+    "go.gopath": "/Users/vizee/src/go",
+    "go.toolsGopath": "/Users/vizee/src/go",
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "diagnostics": false,
+        "documentLink": false
+    },
+    "gopls": {
+        // Add parameter placeholders when completing a function.
+        "usePlaceholders": false,
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false
+    },
+    "[plaintext]": {
+        "editor.wordBasedSuggestions": true
+    },
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.fontFamily": "Cascadia Code",
+    "markdown.preview.fontSize": 16,
+    // "nasc-touchbar.selectNext": false,
+    // "nasc-touchbar.togglePanel": false,
+    // "nasc-touchbar.addCursorBelow": false,
+    // "nasc-touchbar.showReferences": true,
+    // "nasc-touchbar.peekDefinition": true,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vs-minimal",
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": false
+}

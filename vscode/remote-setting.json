@@ -1,0 +1,79 @@
+{
+    // editor
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    // "editor.detectIndentation": true,
+    "editor.wordBasedSuggestions": false,
+    // "editor.lineNumbers": "on",
+    // "editor.quickSuggestionsDelay": 100,
+    "editor.renderWhitespace": "none",
+    "editor.glyphMargin": false,
+    "editor.selectionHighlight": true,
+    "editor.minimap.enabled": false,
+    // file
+    "files.eol": "\n",
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    // git
+    "git.enabled": true,
+    // workbench
+    // "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false,
+    // window
+    // telemetry
+    "telemetry.enableTelemetry": false,
+    // terminal
+    // go
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.toolsGopath": "/home/vizee/src/go",
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "diagnostics": false,
+        "documentLink": false
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    "gopls": {
+        // Add parameter placeholders when completing a function.
+        "usePlaceholders": false,
+        // If true, enable additional analyses with staticcheck.
+        // Warning: This will significantly increase memory usage.
+        "staticcheck": false,
+    },
+    "rust-analyzer.checkOnSave.enable": false,
+    "rust-analyzer.inlayHints.enable": false,
+    "rust-analyzer.diagnostics.enable": false,
+    "rust-analyzer.serverPath": "/home/vizee/local/rust-analyzer/rust-analyzer-linux",
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.snippetSuggestions": "none",
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false,
+        "editor.wordWrap": "bounded"
+    },
+    "php.validate.enable": false,
+    "workbench.startupEditor": "none",
+    "extensions.ignoreRecommendations": true,
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.colorTheme": "Default Dark+",
+    "editor.folding": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": false
+    // "C_Cpp.formatting": "Disabled"
+}

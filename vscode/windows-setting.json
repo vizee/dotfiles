@@ -1,0 +1,102 @@
+{
+    // editor
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 16,
+    // "editor.detectIndentation": true,
+    "editor.wordBasedSuggestions": false,
+    // "editor.lineNumbers": "on",
+    // "editor.quickSuggestionsDelay": 100,
+    "editor.renderWhitespace": "none",
+    "editor.glyphMargin": false,
+    "editor.selectionHighlight": true,
+    "editor.minimap.enabled": false,
+    // file
+    "files.eol": "\n",
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    // git
+    "git.enabled": false,
+    "git.path": "C:/usr/git/bin/git.exe",
+    // workbench
+    // "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false,
+    // window
+    // telemetry
+    "telemetry.enableTelemetry": false,
+    // terminal
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH};C:/usr/git/bin"
+    },
+    "terminal.external.windowsExec": "C:/msys64/bootstrap.exe",
+    // go
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.toolsGopath": "C:/src/go",
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "diagnostics": false,
+        "documentLink": false
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        "editor.snippetSuggestions": "none",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    // https://github.com/golang/tools/blob/master/internal/lsp/source/options.go#L374
+    "gopls": {
+        "usePlaceholders": true,
+        "staticcheck": false,
+        "completeUnimported": false
+    },
+    "rust-analyzer.displayInlayHints": false,
+    "rust-analyzer.highlightingOn": true,
+    "rust-analyzer.cargo-watch.enable": false,
+    "rust-analyzer.cargo-watch.allTargets": false,
+    "rust-analyzer.featureFlags": {
+        // Show diagnostics produced by rust-analyzer itself.
+        "lsp.diagnostics": false,
+        // Automatically insert `()` and `<>` when completing functions and types.
+        "completion.insertion.add-call-parenthesis": true,
+        // Enable completions like `.if`, `.match`, etc.
+        "completion.enable-postfix": true,
+        // Show notification when workspace is fully loaded
+        "notifications.workspace-loaded": false,
+        // Show error when no Cargo.toml was found
+        "notifications.cargo-toml-not-found": true,
+    },
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.snippetSuggestions": "none",
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false,
+        "editor.wordWrap": "bounded"
+    },
+    "php.validate.enable": false,
+    "workbench.startupEditor": "none",
+    "extensions.ignoreRecommendations": true,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.fontSize": 18,
+    "markdown.preview.fontFamily": "Microsoft Yahei",
+    "workbench.iconTheme": "vs-minimal",
+    "editor.folding": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "window.zoomLevel": 0,
+    "breadcrumbs.enabled": false
+    // "C_Cpp.formatting": "Disabled"
+}
