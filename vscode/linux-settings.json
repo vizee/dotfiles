@@ -1,0 +1,71 @@
+{
+    // editor
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 16,
+    "editor.renderWhitespace": "none",
+    "editor.glyphMargin": false,
+    "editor.selectionHighlight": true,
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestionsDelay": 25,
+    // file
+    "files.eol": "\n",
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    // git
+    "git.enabled": true,
+    // workbench
+    // "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false,
+    // window
+    // telemetry
+    "telemetry.enableTelemetry": false,
+    // terminal
+    // go
+    "go.goroot": "/home/vizee/local/go",
+    "go.gopath": "/home/vizee/src/go",
+    "go.toolsGopath": "/home/vizee/src/go",
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "diagnostics": false,
+        "documentLink": false
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false
+    },
+    "rust-analyzer.checkOnSave.enable": false,
+    "rust-analyzer.inlayHints.enable": false,
+    "rust-analyzer.diagnostics.enable": false,
+    "rust-analyzer.serverPath": "/home/vizee/local/rust-analyzer/rust-analyzer-linux",
+    "php.validate.enable": false,
+    "workbench.startupEditor": "none",
+    "extensions.ignoreRecommendations": true,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "workbench.iconTheme": "vs-minimal",
+    "editor.folding": false,
+    "window.zoomLevel": 0,
+    "window.titleBarStyle": "custom",
+    "files.trimFinalNewlines": true,
+    "workbench.sideBar.location": "left",
+    "breadcrumbs.enabled": false,
+    "editor.fontLigatures": true,
+    "remote.SSH.remotePlatform": {
+        "p.clouddev": "linux"
+    }
+    // "C_Cpp.formatting": "Disabled"
+}
