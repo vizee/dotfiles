@@ -23,6 +23,18 @@ set cursorline
 set number
 syntax on
 
+set background=dark
+set termguicolors
+
+map <C-B><C-N> <Esc>:bn<CR>
+map <C-B><C-A> <Esc>:bad
+map <C-B><C-P> <Esc>:bp<CR>
+map <C-B><C-D> <Esc>:bd<CR>
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -59,8 +71,6 @@ let g:NERDTreeDirArrowCollapsible = '-'
 
 autocmd FileType go,rust autocmd BufWritePre * :call LanguageClient#textDocument_formatting_sync()
 
-set background=dark
-set termguicolors
 let g:quantum_black = 1
 let g:quantum_italics = 0
 colorscheme quantum
@@ -68,10 +78,6 @@ let g:airline_theme='quantum'
 
 " map keys
 map <C-K><C-N> :NERDTreeToggle<CR>
-map <C-B><C-N> <Esc>:bn<CR>
-map <C-B><C-A> <Esc>:bad
-map <C-B><C-P> <Esc>:bp<CR>
-map <C-B><C-D> <Esc>:bd<CR>
 autocmd FileType rust nnoremap <F7> :Cargo build<CR>
 autocmd FileType rust nnoremap <F10> :Cargo run<CR>
 
@@ -79,7 +85,3 @@ nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
