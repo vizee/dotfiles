@@ -69,6 +69,7 @@ let g:LanguageClient_serverCommands = {
 let g:LanguageClient_diagnosticsEnable = 0
 
 let g:deoplete#enable_at_startup = 1
+"call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_sep=' '
@@ -79,8 +80,11 @@ let g:NERDTreeDirArrowExpandable='▸'
 let g:NERDTreeDirArrowCollapsible='▾'
 let g:NERDTreeMinimalUI=1
 
-autocmd FileType rust autocmd BufWritePre *.rs :call LanguageClient#textDocument_formatting_sync()
-" autocmd FileType go autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+au FileType rust au BufWritePre *.rs :call LanguageClient#textDocument_formatting_sync()
+autocmd FileType rust nnoremap <F7> :!cargo check<CR>
+autocmd FileType rust nnoremap <F10> :!cargo run<CR>
+"au FileType go au BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+au FileType go nnoremap <F7> :exec '!go vet ' . expand('%:p')<CR>
 
 set background=dark
 set termguicolors
@@ -96,8 +100,6 @@ map <C-B><C-B> <Esc>:bp<CR>
 map <C-B><C-A> <Esc>:badd<Space>
 map <C-B><C-D> <Esc>:bdelete<CR>
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
-autocmd FileType rust nnoremap <F7> :!cargo check<CR>
-autocmd FileType rust nnoremap <F10> :!cargo run<CR>
 au TermOpen * setl nonu | start
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -108,3 +110,10 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+"func ApplyWorkspace()
+"    let g:LanguageClient_serverCommands = {}
+"    au! BufWritePre *.go
+"    au! FileType go
+"endfunc
+"au BufRead,BufNewFile ~/work/* :call ApplyWorkspace()
