@@ -53,8 +53,19 @@ filetype plugin indent on
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/local/rust-analyzer/rust-analyzer-linux'],
-    \ }
+    \ 'rust': {
+    \  'name': 'rust-analyzer',
+    \  'command': ['~/local/rust-analyzer/rust-analyzer-linux'],
+    \  'initializationOptions': {
+    \   'inlayHints': {
+    \    'enable': v:false,
+    \   },
+    \   'lens': {
+    \    'enable': v:false,
+    \   },
+    \  }
+    \ },
+    \}
 let g:LanguageClient_diagnosticsEnable = 0
 
 let g:deoplete#enable_at_startup = 1
