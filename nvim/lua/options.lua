@@ -13,6 +13,7 @@ vim.o.softtabstop = 4
 vim.bo.expandtab = true
 vim.o.expandtab = true
 vim.o.backspace = 'indent,eol,start'
+vim.wo.signcolumn = 'no'
 vim.o.laststatus = 2
 vim.o.mouse = 'a'
 vim.o.selection = 'exclusive'
