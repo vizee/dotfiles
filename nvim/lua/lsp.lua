@@ -87,47 +87,60 @@ local lspconfig = require('lspconfig')
 
 -- rust
 
-lspconfig.rust_analyzer.setup {
-    on_attach = on_attach,
-    flags = {
-        -- This will be the default in neovim 0.7+
-        debounce_text_changes = 150,
-    },
-    capabilities = capabilities,
-    cmd = {
-        vim.fn.getenv('HOME') .. '/local/rust-analyzer/rust-analyzer'
-    },
-    settings = {
-        inlayHints = {
-            enable = false
+local function setup_rust()
+    lspconfig.rust_analyzer.setup {
+        on_attach = on_attach,
+        flags = {
+            -- This will be the default in neovim 0.7+
+            debounce_text_changes = 150,
         },
-        diagnostics = {
-            enable = false
+        capabilities = capabilities,
+        cmd = {
+            vim.fn.getenv('HOME') .. '/local/rust-analyzer/rust-analyzer'
         },
-        lens = {
-            enable = false
-        }
+        settings = {
+                ['rust-analyzer'] = {
+                    assist = {
+                        importGranularity  = 'module',
+                    },
+                    inlayHints = {
+                        enable = false
+                    },
+                    diagnostics = {
+                        enable = false
+                    },
+                    lens = {
+                        enable = false
+                    }
+            }
+        },
     }
-}
 
-vim.cmd [[
-    au FileType rust au BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-]]
+    vim.cmd [[
+        au FileType rust au BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
+    ]]
+end
+
+setup_rust()
 
 -- go
 
-lspconfig.gopls.setup {
-    on_attach = on_attach,
-    flags = {
-        -- This will be the default in neovim 0.7+
-        debounce_text_changes = 150,
-    },
-    capabilities = capabilities,
-    cmd = {
-        vim.fn.getenv('GOPATH') .. '/bin/gopls'
-    },
-}
+local function setup_go()
+    lspconfig.gopls.setup {
+        on_attach = on_attach,
+        flags = {
+            -- This will be the default in neovim 0.7+
+            debounce_text_changes = 150,
+        },
+        capabilities = capabilities,
+        cmd = {
+            vim.fn.getenv('GOPATH') .. '/bin/gopls'
+        },
+    }
 
-vim.cmd [[
-    au FileType go au BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
-]]
+    vim.cmd [[
+        au FileType go au BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
+    ]]
+end
+
+setup_go()
