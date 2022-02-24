@@ -1,3 +1,12 @@
+-- lsp
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = false,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = false,
+})
+
 -- nvim-cmp & luasnip
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
