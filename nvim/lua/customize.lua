@@ -27,7 +27,12 @@ require'bufferline'.setup {
                 text_align = 'left'
             }
         }
-    }
+    },
+    highlights = {
+        buffer_selected = {
+            gui = 'bold',
+        },
+    },
 }
 
 -- nvim-tree

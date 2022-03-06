@@ -7,6 +7,8 @@ end
 
 noremap('n', '<C-b><C-n>', ':BufferLineCycleNext<CR>')
 noremap('n', '<C-b><C-b>', ':BufferLineCyclePrev<CR>')
+noremap('n', '<C-b><C-p>', ':BufferLineCyclePick<CR>')
+noremap('n', '<C-b><C-r>', ':BufferLineSortByTabs<CR>')
 
 -- nvim-tree
 
@@ -22,6 +24,10 @@ noremap("n", "<C-p>", ":Telescope find_files<CR>", opts)
 noremap('n', '<C-b><C-d>', ':bdelete<CR>')
 vim.api.nvim_set_keymap('n', '<C-b><C-a>', ':badd<space>', {})
 vim.api.nvim_set_keymap('n', '<leader>b', ':buffers<CR>:buffer<space>', {})
+
+
+noremap('n', '<C-k><C-t>', ':terminal<CR>')
+
 vim.cmd [[
     autocmd FileType rust nnoremap <F7> :!cargo check<CR>
     autocmd FileType rust nnoremap <F10> :!cargo run<CR>
