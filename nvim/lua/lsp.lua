@@ -147,6 +147,7 @@ local function _organize_go_imports(wait_ms)
             end
         end
     end
+    vim.lsp.buf.formatting_sync(nil, 1000)
 end
 
 local function setup_go()
