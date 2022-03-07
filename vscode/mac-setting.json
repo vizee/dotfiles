@@ -1,72 +1,86 @@
 {
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 16,
+    "editor.fontFamily": "Victor Mono",
+    "editor.fontLigatures": "ss01",
+    "editor.fontSize": 14,
     "editor.glyphMargin": false,
     "editor.minimap.enabled": false,
-    "editor.folding": false,
     "editor.wordBasedSuggestions": false,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "workbench.activityBar.visible": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "crash",
     "terminal.external.osxExec": "iTerm.app",
-    "[go]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
-        // Optional: Disable snippets, as they conflict with completion ranking.
-        "editor.snippetSuggestions": "none",
-    },
     "rust-analyzer.checkOnSave.enable": false,
-    "rust-analyzer.checkOnSave.allTargets": false,
     "rust-analyzer.diagnostics.enable": false,
     "rust-analyzer.inlayHints.enable": false,
-    "[rust]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
-        "editor.snippetSuggestions": "none"
-    },
-    "go.goroot": "/Users/vizee/local/go",
+    "rust-analyzer.lens.enable": false,
+    "rust-analyzer.highlighting.strings": false,
+    "rust-analyzer.assist.importGranularity": "module",
+    "rust-analyzer.server.path": "/Users/vizee/local/rust-analyzer/rust-analyzer",
+    // "go.goroot": "/Users/vizee/local/go",
     "go.gopath": "/Users/vizee/src/go",
     "go.toolsGopath": "/Users/vizee/src/go",
     "go.buildOnSave": "off",
+    "go.testFlags": ["-v"],
     "go.lintOnSave": "off",
     "go.vetOnSave": "off",
-    "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "diagnostics": false,
-        "documentLink": false
-    },
     "gopls": {
-        // Add parameter placeholders when completing a function.
-        "usePlaceholders": false,
-        // If true, enable additional analyses with staticcheck.
-        // Warning: This will significantly increase memory usage.
-        "staticcheck": false
+        "ui.completion.usePlaceholders": false,
+        "ui.diagnostic.staticcheck": false,
+        "ui.completion.experimentalPostfixCompletions": true,
+        "completeUnimported": true,
+        // https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
+        "ui.diagnostic.analyses": {
+            "unsafeptr": false
+        },
     },
-    "[makefile]": {
-        "editor.insertSpaces": false
-    },
-    "[plaintext]": {
-        "editor.wordBasedSuggestions": true
-    },
+    "go.toolsManagement.autoUpdate": true,
     "markdown.preview.doubleClickToSwitchToEditor": false,
-    "markdown.preview.fontFamily": "Cascadia Code",
-    "markdown.preview.fontSize": 16,
     // "nasc-touchbar.selectNext": false,
     // "nasc-touchbar.togglePanel": false,
     // "nasc-touchbar.addCursorBelow": false,
     // "nasc-touchbar.showReferences": true,
     // "nasc-touchbar.peekDefinition": true,
     "workbench.startupEditor": "none",
-    "workbench.iconTheme": "vs-minimal",
+    "workbench.iconTheme": "material-icon-theme",
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 0,
-    "breadcrumbs.enabled": false
+    "remote.SSH.localServerDownload": "off",
+    "remote.SSH.remotePlatform": {
+        "p.roku.moe": "linux"
+    },
+    "workbench.sideBar.location": "left",
+    "editor.folding": false,
+    "git.enabled": true,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.snippetSuggestions": "none",
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        // Optional: Disable snippets, as they conflict with completion ranking.
+        // "editor.snippetSuggestions": "none",
+    },
+    "[cpp]": {
+        "editor.wordBasedSuggestions": true,
+        "editor.wordBasedSuggestionsMode": "currentDocument",
+        "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.inlineSuggest.enabled": true,
+    "breadcrumbs.enabled": false,
+    "editor.guides.bracketPairs": "active",
+    // "[plaintext]": {
+    //     "editor.wordBasedSuggestions": true
+    // },
 }
