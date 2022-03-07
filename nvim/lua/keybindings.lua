@@ -31,5 +31,5 @@ noremap('n', '<C-k><C-t>', ':terminal<CR>')
 vim.cmd [[
     autocmd FileType rust nnoremap <F7> :!cargo check<CR>
     autocmd FileType rust nnoremap <F10> :!cargo run<CR>
-    autocmd FileType go nnoremap <silent> <C-k><C-o> :lua organize_go_imports<CR>
+    autocmd FileType go nnoremap <silent> <C-k><C-o> :lua organize_go_imports()<CR>
 ]]
