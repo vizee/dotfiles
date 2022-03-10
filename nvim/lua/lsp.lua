@@ -163,7 +163,8 @@ local function setup_go()
         },
         settings = {
             gopls = {
-                usePlaceholders = false,
+                ['ui.completion.usePlaceholders'] = false,
+                ['ui.completion.experimentalPostfixCompletions'] = false,
             }
         }
     }
