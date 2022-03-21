@@ -8,7 +8,7 @@ end
 noremap('n', '<C-b><C-n>', ':BufferLineCycleNext<CR>')
 noremap('n', '<C-b><C-b>', ':BufferLineCyclePrev<CR>')
 noremap('n', '<C-b><C-p>', ':BufferLineCyclePick<CR>')
-noremap('n', '<C-b><C-r>', ':BufferLineSortByTabs<CR>')
+noremap('n', '<C-b><C-r>', ':redrawtabline<CR>')
 
 -- nvim-tree
 
