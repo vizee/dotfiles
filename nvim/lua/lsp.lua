@@ -159,7 +159,7 @@ local function setup_go()
         },
         capabilities = capabilities,
         cmd = {
-            vim.fn.getenv('GOPATH') .. '/bin/gopls'
+            vim.fn.getenv('GOPATH') .. '/bin/gopls',
         },
         settings = {
             gopls = {

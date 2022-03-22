@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap('n', '<C-b><C-a>', ':badd<space>', {})
 vim.api.nvim_set_keymap('n', '<leader>b', ':buffers<CR>:buffer<space>', {})
 
 
-noremap('n', '<C-k><C-t>', ':terminal<CR>')
+noremap('n', '<C-k><C-t>', ':split | :lcd %:p:h | terminal<CR>')
 
 vim.cmd [[
     autocmd FileType rust nnoremap <F7> :!cargo check<CR>
