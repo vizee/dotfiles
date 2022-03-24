@@ -66,6 +66,18 @@ cmp.setup({
     })
 })
 
+cmp.setup.filetype({'proto', 'markdown'}, {
+    sources = cmp.config.sources({
+        { name = 'buffer' },
+    })
+})
+
+cmp.setup.cmdline('/', {
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- nvim-lspconfig
