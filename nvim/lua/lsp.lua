@@ -9,10 +9,9 @@ vim.diagnostic.config({
 
 -- nvim-cmp & luasnip
 local has_words_before = function()
-    -- local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    -- return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    return false
- end
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 
 local luasnip = require("luasnip")
 local cmp = require'cmp'
@@ -27,9 +26,11 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
+            -- enable luasnip jump
+            elseif true and luasnip.expand_or_locally_jumpable() then
                 luasnip.expand_or_jump()
-            elseif has_words_before() then
+            -- disable tab complete
+            elseif false and has_words_before() then
                 cmp.complete()
             else
                 fallback()
@@ -109,7 +110,7 @@ local lspconfig = require('lspconfig')
 
 -- rust
 
-local function setup_rust()
+local setup_rust = function()
     lspconfig.rust_analyzer.setup {
         on_attach = on_attach,
         flags = {
@@ -147,7 +148,7 @@ setup_rust()
 
 -- go
 
-local function _organize_go_imports(wait_ms)
+local _organize_go_imports = function(wait_ms)
     local params = vim.lsp.util.make_range_params()
     params.context = {only = {"source.organizeImports"}}
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
@@ -163,7 +164,7 @@ local function _organize_go_imports(wait_ms)
     vim.lsp.buf.formatting_sync(nil, 1000)
 end
 
-local function setup_go()
+local setup_go = function()
     lspconfig.gopls.setup {
         on_attach = on_attach,
         flags = {

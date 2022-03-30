@@ -85,6 +85,20 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
+-- telescope
+
+require('telescope').setup {
+    defaults = {
+        preview = false,
+    }
+}
+
+-- luasnip
+
+require'luasnip.config'.set_config {
+    history = false,
+}
+
 -- auto-command
 
 vim.cmd [[
