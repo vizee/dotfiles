@@ -1,6 +1,7 @@
-require "options"
-require "plugins"
-require "keybindings"
-require "colorschema"
-require "customize"
-require "lsp"
+require 'options'
+require 'plugins'
+require 'keybindings'
+require 'colorschema'
+require 'customize'
+require 'lsp'
+require 'snippets'

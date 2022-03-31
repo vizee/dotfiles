@@ -13,16 +13,16 @@ noremap('n', '<C-b><C-r>', ':redrawtabline<CR>')
 -- nvim-tree
 
 noremap('n', '<C-k><C-n>', ':NvimTreeToggle<CR>')
-noremap('n', '<leader>r', ':NvimTreeRefresh<CR>')
+noremap('n', '<C-k><C-f>', ':NvimTreeFindFile<CR>')
 
 -- telescope
 
-noremap("n", "<C-p>", ":Telescope find_files<CR>", opts)
+noremap("n", "<C-e>", ":Telescope find_files<CR>", opts)
 
 -- oher
 
 noremap('n', '<C-b><C-d>', ':bdelete<CR>')
-vim.api.nvim_set_keymap('n', '<C-b><C-a>', ':badd<space>', {})
+vim.api.nvim_set_keymap('n', '<C-b><C-a>', ':edit<space>', {})
 vim.api.nvim_set_keymap('n', '<leader>b', ':buffers<CR>:buffer<space>', {})
 
 
