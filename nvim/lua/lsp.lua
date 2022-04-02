@@ -65,7 +65,7 @@ cmp.setup({
         { name = 'path' },
     }),
     formatting = {
-        fields = { "kind", "abbr", "menu" },
+        fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
             vim_item.menu = '[' .. entry.source.name .. ']'
             return vim_item

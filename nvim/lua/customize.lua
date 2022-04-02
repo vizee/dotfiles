@@ -103,4 +103,5 @@ require'luasnip.config'.set_config {
 
 vim.cmd [[
     au TermOpen * setl nonu | start
+    au FileType markdown set wrap
 ]]
