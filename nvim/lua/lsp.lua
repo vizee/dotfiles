@@ -63,7 +63,14 @@ cmp.setup({
         { name = 'luasnip' },
     }, {
         { name = 'path' },
-    })
+    }),
+    formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            vim_item.menu = '[' .. entry.source.name .. ']'
+            return vim_item
+        end
+    }
 })
 
 cmp.setup.filetype({'proto', 'markdown'}, {
