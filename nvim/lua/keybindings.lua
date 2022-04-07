@@ -7,7 +7,7 @@ end
 
 noremap('n', '<C-b><C-n>', ':BufferLineCycleNext<CR>')
 noremap('n', '<C-b><C-b>', ':BufferLineCyclePrev<CR>')
-noremap('n', '<C-b><C-p>', ':BufferLineCyclePick<CR>')
+noremap('n', '<C-b><C-p>', ':BufferLinePick<CR>')
 noremap('n', '<C-b><C-r>', ':redrawtabline<CR>')
 
 -- nvim-tree
@@ -18,13 +18,13 @@ noremap('n', '<C-k><C-f>', ':NvimTreeFindFile<CR>')
 -- telescope
 
 noremap("n", "<C-e>", ":Telescope find_files<CR>", opts)
+noremap("n", "<C-b><C-f>", ":Telescope buffers<CR>", opts)
 
 -- oher
 
 noremap('n', '<C-b><C-d>', ':bdelete<CR>')
 vim.api.nvim_set_keymap('n', '<C-b><C-a>', ':edit<space>', {})
 vim.api.nvim_set_keymap('n', '<leader>b', ':buffers<CR>:buffer<space>', {})
-
 
 noremap('n', '<C-k><C-t>', ':split | :lcd %:p:h | terminal<CR>')
 
