@@ -73,7 +73,7 @@ cmp.setup({
     }
 })
 
-cmp.setup.filetype({'proto', 'markdown'}, {
+cmp.setup.filetype({'proto', 'markdown', 'lua'}, {
     sources = cmp.config.sources({
         { name = 'buffer' },
     })
@@ -147,9 +147,12 @@ local setup_rust = function()
         },
     }
 
-    vim.cmd [[
-        au FileType rust au BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
-    ]]
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = {"*.rs"},
+        callback = function()
+            vim.lsp.buf.formatting_sync(nil, 1000)
+        end
+    })
 end
 
 setup_rust()
@@ -194,9 +197,13 @@ local setup_go = function()
     -- export organize_go_imports
     organize_go_imports = _organize_go_imports
     -- vim auto-commands
-    vim.cmd [[
-        au FileType go au BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
-    ]]
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = {"*.go"},
+        callback = function()
+            vim.lsp.buf.formatting_sync(nil, 1000)
+        end
+    })
 end
 
 setup_go()

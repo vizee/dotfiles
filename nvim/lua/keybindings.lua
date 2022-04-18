@@ -1,35 +1,50 @@
 local opts = { noremap = true, silent = true }
-local function noremap(mode, keyseq, op)
+
+local function noremaps(mode, keyseq, op)
     vim.api.nvim_set_keymap(mode, keyseq, op, opts)
+end
+
+local function keymap(mode, keyseq, op)
+    vim.api.nvim_set_keymap(mode, keyseq, op, {})
 end
 
 -- bufferline
 
-noremap('n', '<C-b><C-n>', ':BufferLineCycleNext<CR>')
-noremap('n', '<C-b><C-b>', ':BufferLineCyclePrev<CR>')
-noremap('n', '<C-b><C-p>', ':BufferLinePick<CR>')
-noremap('n', '<C-b><C-r>', ':redrawtabline<CR>')
+noremaps('n', '<C-b><C-n>', ':BufferLineCycleNext<CR>')
+noremaps('n', '<C-b><C-b>', ':BufferLineCyclePrev<CR>')
+noremaps('n', '<C-b><C-p>', ':BufferLinePick<CR>')
+noremaps('n', '<C-b><C-r>', ':redrawtabline<CR>')
 
 -- nvim-tree
 
-noremap('n', '<C-k><C-n>', ':NvimTreeToggle<CR>')
-noremap('n', '<C-k><C-f>', ':NvimTreeFindFile<CR>')
+noremaps('n', '<C-k><C-n>', ':NvimTreeToggle<CR>')
+noremaps('n', '<C-k><C-f>', ':NvimTreeFindFile<CR>')
 
 -- telescope
 
-noremap("n", "<C-e>", ":Telescope find_files<CR>", opts)
-noremap("n", "<C-b><C-f>", ":Telescope buffers<CR>", opts)
+noremaps("n", "<C-e>", ":Telescope find_files<CR>")
+noremaps("n", "<C-b><C-f>", ":Telescope buffers<CR>")
 
--- oher
+-- other
 
-noremap('n', '<C-b><C-d>', ':bdelete<CR>')
-vim.api.nvim_set_keymap('n', '<C-b><C-a>', ':edit<space>', {})
-vim.api.nvim_set_keymap('n', '<leader>b', ':buffers<CR>:buffer<space>', {})
+noremaps('n', '<C-b><C-d>', ':bdelete<CR>')
+keymap('n', '<C-b><C-a>', ':edit<space>')
+keymap('n', '<leader>b', ':buffers<CR>:buffer<space>')
 
-noremap('n', '<C-k><C-t>', ':split | :lcd %:p:h | terminal<CR>')
+noremaps('n', '<C-k><C-t>', ':split | :lcd %:p:h | terminal<CR>')
 
-vim.cmd [[
-    autocmd FileType rust nnoremap <F7> :!cargo check<CR>
-    autocmd FileType rust nnoremap <F10> :!cargo run<CR>
-    autocmd FileType go nnoremap <silent> <C-k><C-o> :lua organize_go_imports()<CR>
-]]
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"rust"},
+    callback = function()
+        keymap('n', '<F7>', ':!cargo check<CR>')
+        keymap('n', '<F10>', ':!cargo run<CR>')
+    end
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"go"},
+    callback = function()
+        noremaps('n', '<C-k><C-o>', ':lua organize_go_imports()<CR>')
+    end
+})
+

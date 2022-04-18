@@ -101,7 +101,14 @@ require'luasnip.config'.set_config {
 
 -- auto-command
 
-vim.cmd [[
-    au TermOpen * setl nonu | start
-    au FileType markdown set wrap
-]]
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"markdown"},
+    callback = function()
+        vim.wo.wrap = true
+    end,
+})
+
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = {"*"},
+    command = "setl nonu | start"
+})

@@ -17,6 +17,7 @@ require('packer').startup(function()
     use 'itchyny/lightline.vim'
     use {
         'akinsho/bufferline.nvim',
+        tags = { '*' },
         -- requires = 'kyazdani42/nvim-web-devicons',
     }
     use {
