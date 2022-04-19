@@ -1,0 +1,44 @@
+export PATH=$PATH:$HOME/.local/bin
+#export PATH=$PATH:$HOME/local/node/bin
+
+if [[ -f ~/.cargo/env ]]; then
+source ~/.cargo/env
+fi
+
+if [[ -d "$HOME/local/go" ]]; then
+export GOPATH=$HOME/src/go
+export PATH="$PATH:$HOME/local/go/bin:$HOME/src/go/bin"
+fi
+
+jumpto() {
+    case "$1" in
+    rs)
+        wd=~/src/rs/
+        ;;
+    go)
+        wd=$GOPATH/src
+        ;;
+    d)
+        wd=~/Documents
+        ;;
+    dm)
+        wd=~/Documents/minds
+        ;;
+    '')
+        wd=-
+        ;;
+    *)
+        if [[ -d $1 ]]; then
+            wd="$1"
+        else
+            echo "no such target: $1"
+            return 1
+        fi
+        ;;
+    esac
+    builtin cd $wd
+}
+alias j=jumpto
+
+alias letsgo='export https_proxy=http://127.0.0.1:7890 && export http_proxy=http://127.0.0.1:7890'
+alias del='mv -t ~/.local/share/Trash/files/'
