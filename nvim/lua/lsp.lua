@@ -80,6 +80,7 @@ cmp.setup.filetype({'proto', 'markdown', 'lua'}, {
 })
 
 cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }
     }
