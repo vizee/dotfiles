@@ -1,28 +1,33 @@
 {
-    // editor
-    "editor.fontFamily": "Cascadia Code",
+    "editor.fontFamily": "MonoLisa",
     "editor.fontSize": 16,
     "editor.renderWhitespace": "none",
     "editor.glyphMargin": false,
     "editor.selectionHighlight": true,
     "editor.minimap.enabled": false,
-    "editor.quickSuggestionsDelay": 25,
-    // file
+    "editor.folding": false,
+    "editor.fontLigatures": "ss01",
+    "editor.inlineSuggest.enabled": true,
+    "editor.wordBasedSuggestions": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
     "files.eol": "\n",
     "files.encoding": "utf8",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    // git
-    "git.enabled": true,
-    // workbench
-    // "workbench.sideBar.location": "right",
-    "workbench.activityBar.visible": false,
-    // window
-    // telemetry
-    "telemetry.enableTelemetry": false,
-    // terminal
-    // go
-    "go.goroot": "/home/vizee/local/go",
+    "files.trimFinalNewlines": true,
+    "files.watcherExclude": {
+        "**/.idea/**": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true
+    },
+    "workbench.sideBar.location": "left",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.untitled.hint": "hidden",
+    "window.titleBarStyle": "custom",
+    "telemetry.telemetryLevel": "crash",
+    "terminal.external.linuxExec": "/home/vizee/.cargo/bin/alacritty",
     "go.gopath": "/home/vizee/src/go",
     "go.toolsGopath": "/home/vizee/src/go",
     "go.buildOnSave": "off",
@@ -31,41 +36,61 @@
     "go.testFlags": [
         "-v"
     ],
+    "go.toolsEnvVars": {
+        "GOMAXPROCS": 4,
+    },
+    "go.toolsManagement.autoUpdate": true,
     "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "diagnostics": false,
-        "documentLink": false
+    "gopls": {
+        "ui.completion.usePlaceholders": false,
+        "ui.completion.experimentalPostfixCompletions": false,
     },
     "[go]": {
         "editor.insertSpaces": false,
-        "editor.snippetSuggestions": "none",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         }
     },
+    "rust-analyzer.inlayHints.enable": false,
+    "rust-analyzer.diagnostics.enable": false,
+    "rust-analyzer.callInfo.full": false,
+    "rust-analyzer.lens.enable": false,
+    "rust-analyzer.server.path": "/home/vizee/local/rust-analyzer/rust-analyzer-linux",
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.snippetSuggestions": "none",
+    },
     "[makefile]": {
         "editor.insertSpaces": false
     },
-    "rust-analyzer.checkOnSave.enable": false,
-    "rust-analyzer.inlayHints.enable": false,
-    "rust-analyzer.diagnostics.enable": false,
-    "rust-analyzer.serverPath": "/home/vizee/local/rust-analyzer/rust-analyzer-linux",
-    "php.validate.enable": false,
-    "workbench.startupEditor": "none",
-    "extensions.ignoreRecommendations": true,
+    "[sql]": {
+        // "editor.wordBasedSuggestions": true,
+        // "editor.wordBasedSuggestionsMode": "currentDocument",
+        "editor.tabSize": 2
+    },
     "markdown.preview.doubleClickToSwitchToEditor": false,
-    "workbench.iconTheme": "vs-minimal",
-    "editor.folding": false,
-    "window.zoomLevel": 0,
-    "window.titleBarStyle": "custom",
-    "files.trimFinalNewlines": true,
-    "workbench.sideBar.location": "left",
     "breadcrumbs.enabled": false,
-    "editor.fontLigatures": true,
+    "extensions.ignoreRecommendations": true,
     "remote.SSH.remotePlatform": {
         "p.clouddev": "linux"
-    }
-    // "C_Cpp.formatting": "Disabled"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true,
+        "zh-hant": true
+    },
+    "editor.semanticHighlighting.enabled": true,
+    "window.restoreWindows": "none",
+    "terminal.integrated.cwd": "${fileDirname}",
+    "files.autoSave": "afterDelay",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/.git": true
+    },
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "GitHub Dark Default",
 }
