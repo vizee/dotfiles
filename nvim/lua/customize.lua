@@ -37,32 +37,34 @@ require'bufferline'.setup {
 
 -- nvim-tree
 
-vim.g.nvim_tree_show_icons = {
-    git = 0,
-    folders = 1,
-    files = 0,
-    folder_arrows = 0,
-}
-vim.g.nvim_tree_icons = {
-    default = '',
-    symlink = '>>',
-    folder = {
-        default = '▸',
-        open = '▾',
-        empty = '▸',
-        empty_open = '▾',
-        symlink = '▸',
-        symlink_open = '▾',
-    }
-}
-
 require'nvim-tree'.setup {
-    auto_close = false,
     filters = { dotfiles = true },
     git = { enable = false },
     view = {
         hide_root_folder = true,
-     },
+    },
+    renderer = {
+        icons = {
+            show = {
+                git = false,
+                folder = true,
+                file = false,
+                folder_arrow = false,
+            },
+            glyphs = {
+                default = '',
+                symlink = '>>',
+                folder = {
+                    default = '▸',
+                    open = '▾',
+                    empty = '▸',
+                    empty_open = '▾',
+                    symlink = '▸',
+                    symlink_open = '▾',    
+                }
+            },
+        },
+    }
 }
 
 -- nvim-treesitter
