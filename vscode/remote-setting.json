@@ -1,12 +1,9 @@
 {
-    // editor
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontSize": 16,
-    "editor.fontLigatures": true,
-    // "editor.detectIndentation": true,
+    // "editor.fontFamily": "Cascadia Code",
+    // "editor.fontSize": 16,
+    // "editor.fontLigatures": "ss01",
     "editor.wordBasedSuggestions": false,
-    // "editor.lineNumbers": "on",
-    // "editor.quickSuggestionsDelay": 100,
+    "editor.quickSuggestionsDelay": 100,
     "editor.renderWhitespace": "none",
     "editor.glyphMargin": false,
     "editor.selectionHighlight": true,
@@ -16,15 +13,8 @@
     "files.encoding": "utf8",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    // git
-    "git.enabled": true,
-    // workbench
-    // "workbench.sideBar.location": "right",
     "workbench.activityBar.visible": false,
-    // window
-    // telemetry
-    "telemetry.enableTelemetry": false,
-    // terminal
+    "explorer.autoReveal": true,
     // go
     "go.buildOnSave": "off",
     "go.lintOnSave": "off",
@@ -34,46 +24,42 @@
     ],
     "go.toolsGopath": "/home/vizee/src/go",
     "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "diagnostics": false,
-        "documentLink": false
+    "gopls": {
+        "ui.completion.experimentalPostfixCompletions": true
     },
+    "go.goroot": "/home/vizee/local/go",
     "[go]": {
+        "editor.insertSpaces": false,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        },
+            "source.organizeImports": true
+        }
         // Optional: Disable snippets, as they conflict with completion ranking.
-        "editor.snippetSuggestions": "none",
+        // "editor.snippetSuggestions": "none",
     },
-    "gopls": {
-        // Add parameter placeholders when completing a function.
-        "usePlaceholders": false,
-        // If true, enable additional analyses with staticcheck.
-        // Warning: This will significantly increase memory usage.
-        "staticcheck": false,
-    },
+    // rust
     "rust-analyzer.checkOnSave.enable": false,
     "rust-analyzer.inlayHints.enable": false,
     "rust-analyzer.diagnostics.enable": false,
-    "rust-analyzer.serverPath": "/home/vizee/local/rust-analyzer/rust-analyzer-linux",
+    "rust-analyzer.callInfo.full": false,
+    "rust-analyzer.assist.importGranularity": "module",
+    "rust-analyzer.lens.enable": false,
+    "rust-analyzer.server.path": "/home/vizee/local/rust-analyzer/rust-analyzer",
+    "rust-analyzer.diagnostics.enableExperimental": false,
     "[rust]": {
         "editor.formatOnSave": true,
-        "editor.snippetSuggestions": "none",
+        "editor.snippetSuggestions": "none"
     },
+    // cpp
+    "C_Cpp.autocomplete": "Disabled",
     "[makefile]": {
         "editor.insertSpaces": false,
         "editor.wordWrap": "bounded"
     },
     "php.validate.enable": false,
-    "workbench.startupEditor": "none",
     "extensions.ignoreRecommendations": true,
-    "workbench.iconTheme": "vs-minimal",
-    "workbench.colorTheme": "Default Dark+",
     "editor.folding": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "window.zoomLevel": 0,
-    "breadcrumbs.enabled": false
-    // "C_Cpp.formatting": "Disabled"
+    "remote.autoForwardPortsSource": "output",
+    "git.enabled": true,
+    "workbench.list.openMode": "doubleClick"
 }
