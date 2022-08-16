@@ -184,9 +184,7 @@ local setup_go = function()
             debounce_text_changes = 150,
         },
         capabilities = capabilities,
-        cmd = {
-            vim.fn.getenv('GOPATH') .. '/bin/gopls',
-        },
+        cmd = { '/home/vizee/src/go/bin/gopls' },
         settings = {
             gopls = {
                 ['ui.completion.usePlaceholders'] = false,
