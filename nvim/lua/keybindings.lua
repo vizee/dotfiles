@@ -44,6 +44,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"go"},
     callback = function()
+        keymap('n', '<F7>', ':!go build<CR>')
         noremaps('n', '<C-k><C-o>', ':lua organize_go_imports()<CR>')
     end
 })

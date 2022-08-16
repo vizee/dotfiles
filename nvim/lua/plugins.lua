@@ -12,7 +12,6 @@
 local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'tyrannicaltoucan/vim-quantum'
     use 'joshdick/onedark.vim'
     use 'itchyny/lightline.vim'
     use {
