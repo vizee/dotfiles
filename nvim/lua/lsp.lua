@@ -176,6 +176,15 @@ local _organize_go_imports = function(wait_ms)
     vim.lsp.buf.formatting_sync(nil, 1000)
 end
 
+
+local get_gopls_path = function()
+    local gopath = vim.fn.getenv('GOPATH')
+    if gopath == '' then
+        gopath = vim.fn.getenv('HOME') .. '/src/go'
+    end
+    return gopath .. '/bin/gopls'
+end
+
 local setup_go = function()
     lspconfig.gopls.setup {
         on_attach = on_attach,
@@ -184,7 +193,7 @@ local setup_go = function()
             debounce_text_changes = 150,
         },
         capabilities = capabilities,
-        cmd = { '/home/vizee/src/go/bin/gopls' },
+        cmd = { get_gopls_path() },
         settings = {
             gopls = {
                 ['ui.completion.usePlaceholders'] = false,
