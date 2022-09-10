@@ -23,6 +23,8 @@ noremaps('n', '<C-k><C-f>', ':NvimTreeFindFile<CR>')
 -- telescope
 
 noremaps("n", "<C-e>", ":Telescope find_files<CR>")
+noremaps("n", "<leader>ld", ":Telescope lsp_document_symbols<CR>")
+noremaps("n", "<leader>ll", ":Telescope lsp_dynamic_workspace_symbols<CR>")
 noremaps("n", "<C-b><C-f>", ":Telescope buffers<CR>")
 
 -- other
