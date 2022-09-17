@@ -97,7 +97,9 @@ require'nvim-treesitter.configs'.setup {
 
 -- project.nvim
 
-require("project_nvim").setup {}
+require("project_nvim").setup {
+    detection_methods = { 'lsp' }
+}
 
 -- telescope
 
