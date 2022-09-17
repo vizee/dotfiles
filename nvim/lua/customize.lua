@@ -39,11 +39,11 @@ require'bufferline'.setup {
 -- nvim-tree
 
 require'nvim-tree'.setup {
-    filters = { dotfiles = true },
-    git = { enable = false },
     view = {
         hide_root_folder = true,
     },
+    git = { enable = false },
+    filters = { dotfiles = true },
     renderer = {
         icons = {
             show = {
@@ -65,7 +65,14 @@ require'nvim-tree'.setup {
                 }
             },
         },
-    }
+    },
+    -- project.nvim
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {
+        enable = true,
+        update_root = true
+    },
 }
 
 -- nvim-treesitter
@@ -88,6 +95,10 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
+-- project.nvim
+
+require("project_nvim").setup {}
+
 -- telescope
 
 require('telescope').setup {
@@ -95,6 +106,8 @@ require('telescope').setup {
         preview = false,
     }
 }
+
+require('telescope').load_extension('projects')
 
 -- luasnip
 

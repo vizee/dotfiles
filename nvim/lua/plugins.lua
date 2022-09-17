@@ -16,7 +16,7 @@ require('packer').startup(function()
     use 'itchyny/lightline.vim'
     use {
         'akinsho/bufferline.nvim',
-        tags = { '*' },
+        tags = { 'v2.*' },
         -- requires = 'kyazdani42/nvim-web-devicons',
     }
     use {
@@ -40,5 +40,8 @@ require('packer').startup(function()
     use {
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
+    }
+    use {
+        'ahmedkhalf/project.nvim'
     }
 end)
