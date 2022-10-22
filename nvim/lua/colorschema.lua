@@ -1,10 +1,7 @@
--- vim.g.quantum_black = 1
--- vim.g.quantum_italics = 0
-
 vim.cmd [[
 try
-  colorscheme onedark
+  colorscheme breezy
 catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme desert
+  colorscheme default
 endtry
 ]]
