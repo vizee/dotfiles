@@ -38,6 +38,4 @@ o.wildmenu = true
 -- o.list = true
 o.splitbelow = true
 o.splitright = true
-o.background = 'light'
-o.termguicolors = true
 o.shortmess = vim.o.shortmess .. 'c'

@@ -5,7 +5,7 @@ vim.g.lightline = {
         statusline = 1,
         tabline = 0
     },
-    colorscheme = 'breezy',
+    colorscheme = vim.g.colors_name,
     active = {
         left = { { 'mode', 'paste' }, { 'readonly', 'filename', 'modified' } }
     }
