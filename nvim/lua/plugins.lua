@@ -13,6 +13,7 @@ local use = require('packer').use
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'rakr/vim-one'
+    use 'numToStr/FTerm.nvim'
     use 'itchyny/lightline.vim'
     use {
         'akinsho/bufferline.nvim',

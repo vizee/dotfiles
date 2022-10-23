@@ -20,6 +20,10 @@ noremaps('n', '<C-b><C-r>', ':redrawtabline<CR>')
 noremaps('n', '<C-k><C-n>', ':NvimTreeToggle<CR>')
 noremaps('n', '<C-k><C-f>', ':NvimTreeFindFile<CR>')
 
+-- FTerm.nvim
+
+noremaps('n', '<C-`>', '<CMD>lua require("FTerm").toggle()<CR>')
+
 -- telescope
 
 noremaps("n", "<C-e>", ":Telescope find_files<CR>")
