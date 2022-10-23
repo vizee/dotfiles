@@ -1,49 +1,52 @@
 {
-    "editor.fontFamily": "Victor Mono",
+    "editor.fontFamily": "MonoLisa",
     "editor.fontLigatures": "ss01",
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.glyphMargin": false,
     "editor.minimap.enabled": false,
     "editor.wordBasedSuggestions": false,
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?（），。",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "workbench.activityBar.visible": false,
     "telemetry.telemetryLevel": "crash",
     "terminal.external.osxExec": "iTerm.app",
-    "rust-analyzer.checkOnSave.enable": false,
-    "rust-analyzer.diagnostics.enable": false,
-    "rust-analyzer.inlayHints.enable": false,
+    "rust-analyzer.imports.granularity.group": "module",
     "rust-analyzer.lens.enable": false,
-    "rust-analyzer.highlighting.strings": false,
-    "rust-analyzer.assist.importGranularity": "module",
+    // "editor.semanticHighlighting.enabled": true,
+    "rust-analyzer.diagnostics.experimental.enable": false,
+    // "rust-analyzer.checkOnSave.enable": false,
+    // "rust-analyzer.diagnostics.enable": false,
+    // "rust-analyzer.semanticHighlighting.strings.enable": false,
     "rust-analyzer.server.path": "/Users/vizee/local/rust-analyzer/rust-analyzer",
-    // "go.goroot": "/Users/vizee/local/go",
     "go.gopath": "/Users/vizee/src/go",
     "go.toolsGopath": "/Users/vizee/src/go",
     "go.buildOnSave": "off",
-    "go.testFlags": ["-v"],
+    "go.testFlags": [
+        "-v"
+    ],
     "go.lintOnSave": "off",
     "go.vetOnSave": "off",
     "go.useLanguageServer": true,
     "gopls": {
         "ui.completion.usePlaceholders": false,
         "ui.diagnostic.staticcheck": false,
-        "ui.completion.experimentalPostfixCompletions": true,
-        "completeUnimported": true,
+        // "ui.completion.experimentalPostfixCompletions": true,
+        // "completeUnimported": true,
         // https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
         "ui.diagnostic.analyses": {
             "unsafeptr": false
         },
     },
-    "go.toolsManagement.autoUpdate": true,
+    "go.toolsManagement.autoUpdate": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     // "nasc-touchbar.selectNext": false,
     // "nasc-touchbar.togglePanel": false,
     // "nasc-touchbar.addCursorBelow": false,
     // "nasc-touchbar.showReferences": true,
     // "nasc-touchbar.peekDefinition": true,
-    "workbench.startupEditor": "none",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+    "window.restoreWindows": "none",
+    "workbench.iconTheme": "symbols",
     "extensions.ignoreRecommendations": true,
     "remote.SSH.localServerDownload": "off",
     "remote.SSH.remotePlatform": {
@@ -52,21 +55,22 @@
     "workbench.sideBar.location": "left",
     "editor.folding": false,
     "git.enabled": true,
-    "workbench.colorTheme": "GitHub Dark Default",
     "[rust]": {
         "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        },
-        "editor.snippetSuggestions": "none",
+        "editor.inlayHints.enabled": "off",
+        "editor.codeLens": true
+        // "editor.codeActionsOnSave": {
+        //     "source.organizeImports": true
+        // },
+        // "editor.snippetSuggestions": "none",
     },
     "[go]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
         },
-        // Optional: Disable snippets, as they conflict with completion ranking.
-        // "editor.snippetSuggestions": "none",
+        "editor.codeLens": true,
+        "editor.inlayHints.enabled": "off",
     },
     "[cpp]": {
         "editor.wordBasedSuggestions": true,
@@ -74,13 +78,41 @@
         "editor.suggest.snippetsPreventQuickSuggestions": false
     },
     "[makefile]": {
-        "editor.insertSpaces": false
+        "editor.insertSpaces": false,
     },
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+    },
+    "terminal.integrated.fontSize": 14,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.inlineSuggest.enabled": true,
     "breadcrumbs.enabled": false,
     "editor.guides.bracketPairs": "active",
-    // "[plaintext]": {
-    //     "editor.wordBasedSuggestions": true
-    // },
+    "workbench.activityBar.visible": false,
+    "terminal.integrated.cwd": "${fileDirname}",
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
+    "editor.tokenColorCustomizations": {
+        "[Panda Moe]": {
+            "textMateRules": [
+                {
+                    "scope": "entity.name.type",
+                    "settings": {
+                        "foreground": "#E5C07B"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.semanticHighlighting.enabled": true,
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Plastic"
 }
