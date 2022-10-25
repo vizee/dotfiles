@@ -1,6 +1,6 @@
 {
     // editor
-    "editor.fontFamily": "MonoLisa",
+    "editor.fontFamily": "CamingoCode",
     // "editor.fontFamily": "'victor mono'",
     "editor.fontSize": 16,
     "editor.fontLigatures": "ss01",
@@ -42,6 +42,7 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "msys2",
+    "terminal.integrated.cwd": "${fileDirname}",
     // go
     "go.buildOnSave": "off",
     "go.lintOnSave": "off",
@@ -73,7 +74,6 @@
     "go.toolsManagement.autoUpdate": true,
     "workbench.editor.untitled.hint": "hidden",
     "editor.folding": false,
-    "workbench.colorTheme": "GitHub Dark Default",
     "[go]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
@@ -89,33 +89,26 @@
         "editor.insertSpaces": false,
         "editor.wordWrap": "bounded"
     },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
     "[rust]": {
-        "editor.semanticHighlighting.enabled": true
+        "editor.semanticHighlighting.enabled": true,
+        "editor.inlayHints.enabled": "off"
     },
     "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": false,
-        "yaml": false,
-        "plaintext": false,
-        "markdown": false,
-        "go": true
-    },
-    "github.copilot.advanced": {
-        "length": 100,
-    },
     "explorer.autoReveal": "focusNoScroll",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "symbols",
     "git.enabled": false,
     "editor.bracketPairColorization.enabled": true,
     "files.autoSave": "afterDelay",
     "workbench.startupEditor": "welcomePageInEmptyWorkbench",
     "window.restoreWindows": "none",
+    "editor.wordSeparators": "，。（）：`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.guides.bracketPairs": "active",
+    // "workbench.list.openMode": "doubleClick",
+    "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true,
         "zh-hant": true
     },
-    "editor.guides.bracketPairs": "active"
-    // "C_Cpp.formatting": "Disabled"
+    "workbench.colorTheme": "Plastic",
+    "workbench.layoutControl.enabled": false
 }
