@@ -151,7 +151,7 @@ local setup_rust = function()
     vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = {"*.rs"},
         callback = function()
-            vim.lsp.buf.formatting_sync(nil, 1000)
+            vim.lsp.buf.format(nil, 1000)
         end
     })
 end
@@ -173,7 +173,7 @@ local _organize_go_imports = function(wait_ms)
             end
         end
     end
-    vim.lsp.buf.formatting_sync(nil, 1000)
+    vim.lsp.buf.format(nil, 1000)
 end
 
 
@@ -209,7 +209,7 @@ local setup_go = function()
     vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = {"*.go"},
         callback = function()
-            vim.lsp.buf.formatting_sync(nil, 1000)
+            vim.lsp.buf.format(nil, 1000)
         end
     })
 end
