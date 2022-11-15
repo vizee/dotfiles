@@ -179,7 +179,7 @@ end
 
 local get_gopls_path = function()
     local gopath = vim.fn.getenv('GOPATH')
-    if gopath == '' then
+    if gopath == vim.NIL or gopath == '' then
         gopath = vim.fn.getenv('HOME') .. '/src/go'
     end
     return gopath .. '/bin/gopls'
