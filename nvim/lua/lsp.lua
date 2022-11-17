@@ -176,15 +176,6 @@ local _organize_go_imports = function(wait_ms)
     vim.lsp.buf.format(nil, 1000)
 end
 
-
-local get_gopls_path = function()
-    local gopath = vim.fn.getenv('GOPATH')
-    if gopath == vim.NIL or gopath == '' then
-        gopath = vim.fn.getenv('HOME') .. '/src/go'
-    end
-    return gopath .. '/bin/gopls'
-end
-
 local setup_go = function()
     lspconfig.gopls.setup {
         on_attach = on_attach,
@@ -193,7 +184,7 @@ local setup_go = function()
             debounce_text_changes = 150,
         },
         capabilities = capabilities,
-        cmd = { get_gopls_path() },
+        cmd = { vim.fn.getenv('GOPATH') .. '/bin/gopls' },
         settings = {
             gopls = {
                 ['ui.completion.usePlaceholders'] = false,
