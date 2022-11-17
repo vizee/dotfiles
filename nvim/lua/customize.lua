@@ -98,7 +98,9 @@ require'nvim-treesitter.configs'.setup {
 -- project.nvim
 
 require("project_nvim").setup {
-    detection_methods = { 'lsp' }
+    detection_methods = { 'lsp', 'pattern' },
+    patterns = { '.git' },
+    exclude_dirs = {'~/.cargo/*', '~/src/go/pkg/*'},
 }
 
 -- telescope
