@@ -128,7 +128,7 @@ local setup_rust = function()
         },
         capabilities = capabilities,
         cmd = {
-            vim.fn.getenv('HOME') .. '/local/rust-analyzer/rust-analyzer'
+            vim.fn.getenv('HOME') .. '/.rustup/toolchains/nightly-x86_64-apple-darwin/bin/rust-analyzer'
         },
         settings = {
                 ['rust-analyzer'] = {
