@@ -119,6 +119,16 @@ local lspconfig = require('lspconfig')
 
 -- rust
 
+local function locate_ra()
+    local f = io.popen('rustup which rust-analyzer')
+    local s = f:read()
+    f:close()
+    if s then
+        return s
+    end
+    return 'rust-analyzer'
+end
+
 local setup_rust = function()
     lspconfig.rust_analyzer.setup {
         on_attach = on_attach,
@@ -128,7 +138,7 @@ local setup_rust = function()
         },
         capabilities = capabilities,
         cmd = {
-            vim.fn.getenv('HOME') .. '/.rustup/toolchains/nightly-x86_64-apple-darwin/bin/rust-analyzer'
+            locate_ra(),
         },
         settings = {
                 ['rust-analyzer'] = {
