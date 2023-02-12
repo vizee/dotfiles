@@ -1,20 +1,7 @@
 {
-    // "editor.fontFamily": "Cascadia Code",
-    // "editor.fontSize": 16,
-    // "editor.fontLigatures": "ss01",
-    "editor.wordBasedSuggestions": false,
-    "editor.quickSuggestionsDelay": 100,
-    "editor.renderWhitespace": "none",
-    "editor.glyphMargin": false,
-    "editor.selectionHighlight": true,
-    "editor.minimap.enabled": false,
-    // file
-    "files.eol": "\n",
-    "files.encoding": "utf8",
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "workbench.activityBar.visible": false,
-    "explorer.autoReveal": true,
+    // common
+    "workbench.list.openMode": "doubleClick",
+    "git.enabled": true,
     // go
     "go.buildOnSave": "off",
     "go.lintOnSave": "off",
@@ -22,44 +9,29 @@
     "go.testFlags": [
         "-v"
     ],
-    "go.toolsGopath": "/home/vizee/src/go",
-    "go.useLanguageServer": true,
+    "go.toolsManagement.autoUpdate": false,
     "gopls": {
-        "ui.completion.experimentalPostfixCompletions": true
+        "ui.completion.usePlaceholders": false,
+        "ui.diagnostic.staticcheck": false,
+        "ui.completion.experimentalPostfixCompletions": true,
+        "ui.diagnostic.analyses": {
+            "unsafeptr": false
+        },
     },
-    "go.goroot": "/home/vizee/local/go",
     "[go]": {
-        "editor.insertSpaces": false,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-        // Optional: Disable snippets, as they conflict with completion ranking.
-        // "editor.snippetSuggestions": "none",
+            "source.organizeImports": true,
+        },
+        "editor.snippetSuggestions": "inline",
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
     },
     // rust
-    "rust-analyzer.checkOnSave.enable": false,
-    "rust-analyzer.inlayHints.enable": false,
-    "rust-analyzer.diagnostics.enable": false,
-    "rust-analyzer.callInfo.full": false,
-    "rust-analyzer.assist.importGranularity": "module",
-    "rust-analyzer.lens.enable": false,
-    "rust-analyzer.server.path": "/home/vizee/local/rust-analyzer/rust-analyzer",
-    "rust-analyzer.diagnostics.enableExperimental": false,
+    "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer",
     "[rust]": {
-        "editor.formatOnSave": true,
-        "editor.snippetSuggestions": "none"
+        "editor.semanticHighlighting.enabled": true,
+        "editor.inlayHints.enabled": "off"
     },
-    // cpp
-    "C_Cpp.autocomplete": "Disabled",
-    "[makefile]": {
-        "editor.insertSpaces": false,
-        "editor.wordWrap": "bounded"
-    },
-    "php.validate.enable": false,
-    "extensions.ignoreRecommendations": true,
-    "editor.folding": false,
-    "remote.autoForwardPortsSource": "output",
-    "git.enabled": true,
-    "workbench.list.openMode": "doubleClick"
 }
