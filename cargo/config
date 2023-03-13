@@ -1,13 +1,18 @@
 [build]
-#rustc-wrapper = "sccache"
+rustc-wrapper = "sccache"
 jobs = 2
 
 [source.crates-io]
-registry = "https://github.com/rust-lang/crates.io-index"
-#replace-with = "rsproxy"
+# To use sparse index, change 'rsproxy' to 'rsproxy-sparse'
+replace-with = 'rsproxy-sparse'
 
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
+
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
 
 [net]
-git-fetch-with-cli = false
+git-fetch-with-cli = true
