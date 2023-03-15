@@ -8,10 +8,11 @@
 // from the command palette or from `Zed` application menu.
 {
     "theme": "One Dark",
-    "buffer_font_family": "MonoLisa",
+    "buffer_font_family": "Zed Mono",
     "buffer_font_size": 15,
     "ensure_final_newline_on_save": true,
     "auto_update": false,
+    "remove_trailing_whitespace_on_save": true,
     "lsp": {
         "rust-analyzer": {
             "initialization_options": {
