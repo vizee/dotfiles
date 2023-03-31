@@ -8,8 +8,18 @@
 // from the command palette or from `Zed` application menu.
 {
     "theme": "One Dark",
-    "buffer_font_family": "Zed Mono",
+    "buffer_font_family": "Space Mono",
     "buffer_font_size": 15,
+    // https://helpx.adobe.com/cn/fonts/using/open-type-syntax.chromeless.html
+    "buffer_font_features": {
+        "calt": false,
+        "liga": false
+    },
+    "language_overrides": {
+        "YAML": {
+            "enable_language_server": false
+        }
+    },
     "ensure_final_newline_on_save": true,
     "auto_update": false,
     "remove_trailing_whitespace_on_save": true,
@@ -27,6 +37,9 @@
                 },
                 "lens": {
                     "enable": false
+                },
+                "check": {
+                    "allTargets": false
                 }
             }
         },
