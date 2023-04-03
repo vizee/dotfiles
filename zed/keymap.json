@@ -3,7 +3,15 @@
         "context": "Pane",
         "bindings": {
             "ctrl-tab": "pane::ActivateNextItem",
-            "ctrl-shift-tab": "pane::ActivatePrevItem"
+            "ctrl-shift-tab": "pane::ActivatePrevItem",
+            "alt-[": "pane::GoBack",
+            "alt-]": "pane::GoForward"
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "f1": "command_palette::Toggle"
         }
     }
 ]

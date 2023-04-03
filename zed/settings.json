@@ -15,9 +15,13 @@
         "calt": false,
         "liga": false
     },
+    "enable_language_server": false,
     "language_overrides": {
-        "YAML": {
-            "enable_language_server": false
+        "JSON": {
+            "enable_language_server": true
+        },
+        "Rust": {
+            "enable_language_server": true
         }
     },
     "ensure_final_newline_on_save": true,
@@ -41,12 +45,6 @@
                 "check": {
                     "allTargets": false
                 }
-            }
-        },
-        "gopls": {
-            "initialization_options": {
-                "ui.completion.usePlaceholders": false,
-                "ui.diagnostic.staticcheck": false
             }
         }
     }
