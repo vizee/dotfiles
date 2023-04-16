@@ -39,12 +39,10 @@ require'bufferline'.setup {
 -- nvim-tree
 
 require'nvim-tree'.setup {
-    view = {
-        hide_root_folder = true,
-    },
     git = { enable = false },
     filters = { dotfiles = true },
     renderer = {
+        root_folder_label = false,
         icons = {
             show = {
                 git = false,
