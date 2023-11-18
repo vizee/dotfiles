@@ -1,9 +1,7 @@
 {
     // common
-    "workbench.list.openMode": "doubleClick",
     "git.enabled": true,
     // go
-    "go.buildOnSave": "off",
     "go.lintOnSave": "off",
     "go.vetOnSave": "off",
     "go.testFlags": [
@@ -30,8 +28,12 @@
     },
     // rust
     "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer",
+    "rust-analyzer.imports.granularity.group": "module",
     "[rust]": {
+        "editor.formatOnSave": true,
         "editor.semanticHighlighting.enabled": true,
+        "editor.codeLens": false,
         "editor.inlayHints.enabled": "off"
     },
+    "workbench.list.openMode": "doubleClick"
 }
