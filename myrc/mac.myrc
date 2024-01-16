@@ -1,0 +1,54 @@
+export GOPATH=$HOME/src/go
+export GRAALVM_HOME=$HOME/local/graalvm-jdk-17.0.7+8.1/Contents/Home
+export JAVA_HOME=$GRAALVM_HOME
+export PATH=$HOME/local/bin:$GRAALVM_HOME/bin:$PATH:$HOME/local/go/bin:$HOME/src/go/bin
+export HOMEBREW_API_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.aliyun.com/homebrew/homebrew-core.git"
+
+if [[ -f $HOME/.cargo/env ]]; then
+    source $HOME/.cargo/env
+fi
+
+jumpto() {
+    local wd
+    if [[ -d "$1" ]]; then
+        wd="$1"
+    elif [[ -d "$HOME/src/$1" ]]; then
+        wd="$HOME/src/$1"
+    else
+        case "$1" in
+        g)
+            wd=$GOPATH/src
+            ;;
+        lc)
+            wd=~/src/rs/leetcode/src
+            ;;
+        w)
+            wd=~/src/work/xt/
+            ;;
+        d)
+            wd=~/Documents
+            ;;
+        dp)
+            wd=~/Documents/papers/
+            ;;
+        dm)
+            wd=~/Documents/minds/
+            ;;
+        '')
+            wd=-
+            ;;
+        *)
+            echo "no such target: $1"
+            return 1
+        ;;
+        esac
+    fi
+    builtin cd $wd
+}
+alias j=jumpto
+
+alias letsgo='export https_proxy=http://127.0.0.1:7890 && export http_proxy=http://127.0.0.1:7890 && export no_proxy=goproxy.cn'
+alias pp='ssh q.clouddev'
