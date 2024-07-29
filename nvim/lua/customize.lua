@@ -1,13 +1,11 @@
--- lightline
+-- lualine
 
-vim.g.lightline = {
-    enable = {
-        statusline = 1,
-        tabline = 0
-    },
-    colorscheme = vim.g.colors_name,
-    active = {
-        left = { { 'mode', 'paste' }, { 'readonly', 'filename', 'modified' } }
+require('lualine').setup {
+    options = {
+        icons_enabled = false,
+        theme = 'onedark',
+        component_separators = { left = '|', right = '|'},
+        section_separators = { left = '', right = ''},
     }
 }
 

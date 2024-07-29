@@ -1,48 +1,43 @@
--- https://github.com/wbthomason/packer.nvim#quickstart
+local function lazy_setup()
+    local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+    if not (vim.uv or vim.loop).fs_stat(lazypath) then
+        local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+        local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+        if vim.v.shell_error ~= 0 then
+            vim.api.nvim_echo({
+                { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+                { out, "WarningMsg" },
+                { "\nPress any key to exit..." },
+            }, true, {})
+            vim.fn.getchar()
+            os.exit(1)
+        end
+    end
+    vim.opt.rtp:prepend(lazypath)
+end
 
--- local function packer_setup()
---     local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
---     if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
---         print('downloading packer.nvim')
---         vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
---     end
--- end
--- packer_setup()
+lazy_setup()
 
-local use = require('packer').use
-require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'rakr/vim-one'
-    use 'numToStr/FTerm.nvim'
-    use 'itchyny/lightline.vim'
-    use {
-        'akinsho/bufferline.nvim',
-        tags = { 'v2.*' },
-        -- requires = 'kyazdani42/nvim-web-devicons',
-    }
-    use {
-        'kyazdani42/nvim-tree.lua',
-        -- requires = 'kyazdani42/nvim-web-devicons',
-    }
-    use {
+require("lazy").setup({
+    spec = {
+        'neovim/nvim-lspconfig',
         'nvim-treesitter/nvim-treesitter',
-        -- run = ':TSUpdate'
+        'numToStr/FTerm.nvim',
+        'nvim-lualine/lualine.nvim',
+        'rakr/vim-one',
+        { 'akinsho/bufferline.nvim', version = "*" },
+        'kyazdani42/nvim-tree.lua',
+        {
+            'hrsh7th/nvim-cmp',
+            dependencies = {
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-path',
+                'hrsh7th/cmp-buffer',
+            }
+        },
+        'L3MON4D3/LuaSnip',
+        { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+        'ahmedkhalf/project.nvim',
+        -- { 'nvimdev/indentmini.nvim', opts = { char = '|' } },
     }
-    use 'neovim/nvim-lspconfig'
-    use  {
-        'hrsh7th/nvim-cmp',
-        requires = {
-            'hrsh7th/cmp-nvim-lsp',
-            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-        }
-    }
-    use 'L3MON4D3/LuaSnip'
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
-    }
-    use {
-        'ahmedkhalf/project.nvim'
-    }
-end)
+})
