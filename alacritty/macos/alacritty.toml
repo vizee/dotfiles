@@ -1,0 +1,33 @@
+import = ["/Users/vizee/.config/alacritty/theme.toml"]
+
+[env]
+LC_CTYPE = "en_US.UTF-8"
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 16
+
+[font.normal]
+family = "IntelOne Mono"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "F"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "B"
+mods = "Alt"
+
+[scrolling]
+history = 10000
+
+[window.dimensions]
+columns = 100
+lines = 36
+
+[window.padding]
+x = 2
+y = 2
