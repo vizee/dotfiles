@@ -1,15 +1,15 @@
 {
-    "editor.fontFamily": "MonoLisa",
-    "editor.fontLigatures": "ss01",
-    "editor.fontSize": 15,
+    "editor.fontFamily": "IntelOne Mono",
+    // "editor.fontLigatures": "ss01",
+    "editor.fontSize": 16,
     "editor.glyphMargin": false,
     "editor.minimap.enabled": false,
-    "editor.wordBasedSuggestions": false,
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?（），。",
+    "editor.wordBasedSuggestions": "off",
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?（），。、",
     "files.insertFinalNewline": true,
+    "explorer.compactFolders": false,
     "files.trimTrailingWhitespace": true,
     "telemetry.telemetryLevel": "crash",
-    "terminal.external.osxExec": "iTerm.app",
     "rust-analyzer.imports.granularity.group": "module",
     "rust-analyzer.lens.enable": false,
     // "editor.semanticHighlighting.enabled": true,
@@ -17,10 +17,9 @@
     // "rust-analyzer.checkOnSave.enable": false,
     // "rust-analyzer.diagnostics.enable": false,
     // "rust-analyzer.semanticHighlighting.strings.enable": false,
-    "rust-analyzer.server.path": "/Users/vizee/local/rust-analyzer/rust-analyzer",
+    "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-x86_64-apple-darwin/bin/rust-analyzer",
     "go.gopath": "/Users/vizee/src/go",
     "go.toolsGopath": "/Users/vizee/src/go",
-    "go.buildOnSave": "off",
     "go.testFlags": [
         "-v"
     ],
@@ -28,14 +27,7 @@
     "go.vetOnSave": "off",
     "go.useLanguageServer": true,
     "gopls": {
-        "ui.completion.usePlaceholders": false,
-        "ui.diagnostic.staticcheck": false,
-        // "ui.completion.experimentalPostfixCompletions": true,
-        // "completeUnimported": true,
-        // https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
-        "ui.diagnostic.analyses": {
-            "unsafeptr": false
-        },
+        "ui.completion.usePlaceholders": false
     },
     "go.toolsManagement.autoUpdate": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
@@ -46,11 +38,10 @@
     // "nasc-touchbar.peekDefinition": true,
     "workbench.startupEditor": "welcomePageInEmptyWorkbench",
     "window.restoreWindows": "none",
-    "workbench.iconTheme": "symbols",
     "extensions.ignoreRecommendations": true,
     "remote.SSH.localServerDownload": "off",
     "remote.SSH.remotePlatform": {
-        "p.roku.moe": "linux"
+        "q.clouddev": "linux"
     },
     "workbench.sideBar.location": "left",
     "editor.folding": false,
@@ -67,14 +58,13 @@
     "[go]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
         "editor.codeLens": true,
         "editor.inlayHints.enabled": "off",
     },
     "[cpp]": {
-        "editor.wordBasedSuggestions": true,
-        "editor.wordBasedSuggestionsMode": "currentDocument",
+        "editor.wordBasedSuggestions": "currentDocument",
         "editor.suggest.snippetsPreventQuickSuggestions": false
     },
     "[makefile]": {
@@ -90,29 +80,32 @@
             "other": "off"
         },
     },
+    "[proto]": {
+        "editor.wordBasedSuggestions": "currentDocument",
+    },
     "terminal.integrated.fontSize": 14,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.inlineSuggest.enabled": true,
     "breadcrumbs.enabled": false,
     "editor.guides.bracketPairs": "active",
-    "workbench.activityBar.visible": false,
     "terminal.integrated.cwd": "${fileDirname}",
     "editor.unicodeHighlight.allowedLocales": {
-        "zh-hans": true
+        "zh-hans": true,
+        "zh-hant": true
     },
-    "editor.tokenColorCustomizations": {
-        "[Panda Moe]": {
-            "textMateRules": [
-                {
-                    "scope": "entity.name.type",
-                    "settings": {
-                        "foreground": "#E5C07B"
-                    }
-                }
-            ]
-        }
-    },
+    "editor.language.colorizedBracketPairs": [],
     "editor.semanticHighlighting.enabled": true,
     "git.confirmSync": false,
-    "workbench.colorTheme": "Plastic"
+    "workbench.layoutControl.enabled": false,
+    "workbench.iconTheme": "vs-minimal",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "redhat.telemetry.enabled": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "window.commandCenter": false,
+    "workbench.activityBar.location": "hidden",
+    "[cpp][proto]": {
+        "editor.wordBasedSuggestions": "matchingDocuments"
+    }
 }
