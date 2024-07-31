@@ -50,7 +50,7 @@ require'nvim-tree'.setup {
             },
             glyphs = {
                 default = '',
-                symlink = '>>',
+                symlink = '->',
                 folder = {
                     default = '▸',
                     open = '▾',
@@ -74,7 +74,7 @@ require'nvim-tree'.setup {
 -- nvim-treesitter
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'c', 'go', 'rust'},
+    ensure_installed = { 'c', 'go', 'rust', 'vimdoc' },
     sync_install = false,
     auto_install = false,
     highlight = {
