@@ -63,12 +63,12 @@ require'nvim-tree'.setup {
         },
     },
     -- project.nvim
-    sync_root_with_cwd = true,
-    respect_buf_cwd = true,
-    update_focused_file = {
-        enable = true,
-        update_root = true
-    },
+    -- sync_root_with_cwd = true,
+    -- respect_buf_cwd = true,
+    -- update_focused_file = {
+    --     enable = true,
+    --     update_root = true
+    -- },
 }
 
 -- nvim-treesitter
@@ -93,14 +93,6 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
--- project.nvim
-
-require("project_nvim").setup {
-    detection_methods = { 'lsp', 'pattern' },
-    patterns = { '.git' },
-    exclude_dirs = {'~/.cargo/*', '~/src/go/pkg/*'},
-}
-
 -- telescope
 
 require('telescope').setup {
@@ -108,8 +100,6 @@ require('telescope').setup {
         preview = false,
     }
 }
-
-require('telescope').load_extension('projects')
 
 -- luasnip
 

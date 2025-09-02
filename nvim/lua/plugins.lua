@@ -37,7 +37,7 @@ require("lazy").setup({
         },
         'L3MON4D3/LuaSnip',
         { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
-        'ahmedkhalf/project.nvim',
+        -- { 'nvim-telescope/telescope-project.nvim', dependencies = { 'nvim-telescope/telescope.nvim' } },
         -- { 'nvimdev/indentmini.nvim', opts = { char = '|' } },
     }
 })
