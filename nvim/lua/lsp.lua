@@ -115,8 +115,6 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ds', '<cmd>Telescope lsp_document_symbols<CR>', opts)
 end
 
-local lspconfig = require('lspconfig')
-
 -- rust
 
 local function locate_ra()
@@ -130,7 +128,7 @@ local function locate_ra()
 end
 
 local setup_rust = function()
-    lspconfig.rust_analyzer.setup {
+    vim.lsp.config('rust_analyzer', {
         on_attach = on_attach,
         flags = {
             -- This will be the default in neovim 0.7+
@@ -156,7 +154,8 @@ local setup_rust = function()
                     }
             }
         },
-    }
+    })
+    vim.lsp.enable('rust_analyzer')
 
     vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = {"*.rs"},
@@ -196,7 +195,7 @@ local function locate_gopls()
 end
 
 local setup_go = function()
-    lspconfig.gopls.setup {
+    vim.lsp.config('gopls', {
         on_attach = on_attach,
         flags = {
             -- This will be the default in neovim 0.7+
@@ -210,7 +209,8 @@ local setup_go = function()
                 ['ui.completion.experimentalPostfixCompletions'] = false,
             }
         }
-    }
+    })
+    vim.lsp.enable('gopls')
 
     -- export organize_go_imports
     organize_go_imports = _organize_go_imports
